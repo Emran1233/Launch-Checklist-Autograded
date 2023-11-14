@@ -1,4 +1,6 @@
-const { myFetch } = require("./scriptHelper");
+// Write your JavaScript code here!
+
+ const { myFetch } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
     let form = document.querySelector("form");
@@ -9,17 +11,18 @@ form.addEventListener("submit", function(event){
         let userFuelLevel = document.querySelector("input[name=fuelLevel]");
         let userCargoMass = document.querySelector("input[name=cargoMass]");
 
+        
 
 if (userPilotName.value === "" || userCoPilotName.value === "" || userFuelLevel.value === "" || userCargoMass.value === ""){
             alert("All fields are required!");
             event.preventDefault();
 } else {
-            formSubmission(document, userPilotName, userCoPilotName, userFuelLevel, userCargoMass)
+            formSubmission(document, faultyItems, userPilotName, userCoPilotName, userFuelLevel, userCargoMass)
             event.preventDefault();
         };
     });
 
-
+  
 
     let listedPlanets;
     // Set listedPlanetsResponse equal to the value returned by calling myFetch()
@@ -40,6 +43,9 @@ if (userPilotName.value === "" || userCoPilotName.value === "" || userFuelLevel.
  });
 
         // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
+    
+    
+ 
     
     
  
