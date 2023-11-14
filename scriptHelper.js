@@ -20,7 +20,7 @@ missionTarget.innerHTML = `<h2>Mission Destination</h2>
     `;
  }
  
-function validateInput(testInput)
+function validateInput(testInput){
      if (testInput === ""){
        return "Empty";    
  }   else if (isNaN(testInput) === true){  
@@ -28,20 +28,19 @@ function validateInput(testInput)
  }   else if (isNaN(testInput) === false){ 
         return "Is a Number";
  };
- 
-function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-     let faultyStatus = document.getElementbyId("faultyStatus"); 
+}
+function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) { 
      let pilotStatus = document.getElementById("pilotStatus"); 
      let copilotStatus = document.getElementById("copilotStatus"); 
      let fuelStatus = document.getElementById("fuelStatus"); 
      let cargoStatus = document.getElementById("cargoStatus"); 
-     let launchStatus = document.getElementById("launchStatus"); } 
+     let launchStatus = document.getElementById("launchStatus");  
  
 if   (validateInput(pilot.value) === "Is a Number"  
 ||    validateInput(copilot.value) === "Is a Number" 
 ||    validateInput(fuelLevel.value) === "Not a Number" 
 ||    validateInput(cargoLevel.value) === "Not a Number") { 
-        alert("Invalid Input!");
+        return("Invalid Input!");
     } else { 
        pilotStatus.innerHTML = `Pilot: ${pilot.value}`;
        copilotStatus.innerHTML = `Co-pilot: ${copilot.value}`;
@@ -59,8 +58,10 @@ if   (validateInput(pilot.value) === "Is a Number"
         launchStatus.innerHTML = "Shuttle is ready for launch"; 
         launchStatus.style.color = "green"; 
     } 
+}
+
 };
-    
+
  async function myFetch() {
      let planetsReturned;
  
@@ -81,4 +82,4 @@ if   (validateInput(pilot.value) === "Is a Number"
  module.exports.validateInput = validateInput;
  module.exports.formSubmission = formSubmission;
  module.exports.pickPlanet = pickPlanet; 
- module.exports.myFetch = myFetch;
+ module.exports.myFetch = myFetch; 
