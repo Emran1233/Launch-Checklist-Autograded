@@ -17,7 +17,7 @@ if (userPilotName.value === "" || userCoPilotName.value === "" || userFuelLevel.
             alert("All fields are required!");
             event.preventDefault();
 } else {
-            formSubmission(document, faultyItems, userPilotName, userCoPilotName, userFuelLevel, userCargoMass)
+            formSubmission(document, list, userPilotName.value, userCoPilotName.value, userFuelLevel.value, userCargoMass.value)
             event.preventDefault();
         };
     });
@@ -43,9 +43,6 @@ if (userPilotName.value === "" || userCoPilotName.value === "" || userFuelLevel.
  });
 
         // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-    
-    
- 
     
     
  
